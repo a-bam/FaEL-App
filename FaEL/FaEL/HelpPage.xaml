@@ -1,0 +1,38 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="FaEL.Page1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="ApplicationTitle" Text="FaEL" Foreground="White" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="Help" Margin="9,-7,0,0" Foreground="White" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid Background="Black" x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <TextBlock Height="165" HorizontalAlignment="Left" Margin="0,52,0,0" Name="textBlock1" Text="To save your location press the 'Find me on map' button. After a pause the map will then zoom to your current location, after this press 'Update Location' to save your location to the server. If this fails, retry by clicking the 'Find me on map' button again." TextWrapping="Wrap" VerticalAlignment="Top" Width="456" Foreground="White"/>
+            <TextBlock Height="59" HorizontalAlignment="Left" Margin="0,6,0,0" Name="textBlock2" Text="How to save location:" FontSize ="25" VerticalAlignment="Top" Width="250" Foreground="White"/>
+            <TextBlock Height="58" HorizontalAlignment="Left" Margin="0,312,0,0" Name="textBlock3" Text="To clear your location press the button below:" VerticalAlignment="Top" Width="424" Foreground="White"/>
+            <Button Content="Clear Location" Height="84" HorizontalAlignment="Left" Margin="9,357,0,0" Name="button1" VerticalAlignment="Top" Width="423" Click="button1_Click" Foreground="White" BorderBrush="White"/>
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>

@@ -1,0 +1,58 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="FaEL.Register"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28" Background="Black">
+            <TextBlock x:Name="ApplicationTitle" Text="FaEL" Style="{StaticResource PhoneTextNormalStyle}" Foreground="White"/>
+            <TextBlock x:Name="PageTitle" Text="Register" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" Foreground="White"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0" Background="Black">
+            <TextBox Height="74" Margin="156,30,0,0" Name="rNameBox" VerticalAlignment="Top" Background="#BFFFFFFF" Foreground= "Black"/>
+            <TextBox Height="74" Margin="156,110,0,0" Name="rPassBox" VerticalAlignment="Top" Background="#BFFFFFFF" Foreground= "Black" />
+            <TextBox Height="74" Margin="156,190,0,0" Name="rDOBBox" VerticalAlignment="Top" Background="#BFFFFFFF" Foreground= "Black" />
+            <TextBox Height="225" Margin="156,270,0,0" Name="rBIOBox" VerticalAlignment="Top" Background="#BFFFFFFF" Foreground= "Black"/>
+            <TextBlock FontSize="24" Height="48" HorizontalAlignment="Left" Margin="34,41,0,0" Text="Full Name:" TextWrapping="Wrap" VerticalAlignment="Top" Width="116" Foreground="White" />
+            <TextBlock FontSize="24" Height="48" HorizontalAlignment="Left" Margin="34,121,0,0" Text="Password:" TextWrapping="Wrap" VerticalAlignment="Top" Width="116" Foreground="White" />
+            <TextBlock FontSize="24" Height="48" HorizontalAlignment="Left" Margin="34,204,0,0" Text="DOB:" TextWrapping="Wrap" VerticalAlignment="Top" Width="116" Foreground="White" />
+            <TextBlock FontSize="24" Height="48" HorizontalAlignment="Left" Margin="34,283,0,0" Text="Bio:" TextWrapping="Wrap" VerticalAlignment="Top" Width="116" Foreground="White" />
+            <Button x:Name="registerRegisterButton" Content="Register" Margin="0,505,8,8" Click="RegisterButton_Click" HorizontalAlignment="Right" Width="217" Foreground="White" BorderBrush="White">
+            </Button>
+            <TextBlock Height="104" HorizontalAlignment="Left" Margin="12,337,0,0" Name="testBlock1" VerticalAlignment="Top" Width="184" />
+            <TextBlock Height="94" HorizontalAlignment="Left" Margin="9,505,0,0" Name="textBlock1" Text="By clicking 'Register' you agree to allow the use of your location. For more info see 'Policy' on the About page" FontSize="15" TextWrapping="wrap" VerticalAlignment="Top" Width="229" />
+        </Grid>
+    </Grid>
+ 
+    <!--Sample code showing usage of ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>

@@ -1,0 +1,76 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="FaEL.MainPanorama"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="False" xmlns:my="clr-namespace:Microsoft.Phone.Controls.Maps;assembly=Microsoft.Phone.Controls.Maps">
+
+    <!--LayoutRoot contains the root grid where all other page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Black">
+        <controls:Panorama Title="Friend and Event Locator" Foreground="White" Background="{x:Null}">
+            <controls:Panorama.TitleTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding}" FontSize="100" Margin="0,50,0,0" />
+                </DataTemplate>
+            </controls:Panorama.TitleTemplate>
+            
+            <!--Panorama item one-->
+            <controls:PanoramaItem Header="Details" Background="Black" Foreground="White" Width="443">
+                <Grid Width="495">
+                    <TextBlock Name="YourName" Height="55" Margin="3,6,7,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="32" Text="John Doe" d:LayoutOverrides="GridBox, HorizontalMargin" />
+                    <TextBlock Name="YourDOB" Height="42" Margin="3,62,203,0" TextWrapping="Wrap" Text="D.O.B.: " VerticalAlignment="Top" FontSize="26.667" d:LayoutOverrides="GridBox, HorizontalMargin" />
+                    <TextBlock HorizontalAlignment="Left" Height="38" Margin="2,133,0,0" TextWrapping="Wrap" Text="Bio:" VerticalAlignment="Top" Width="71" FontSize="26.667"/>
+                    <TextBlock Name="YourBio" Margin="1.571,187.429,78,85.571" FontSize="24"  TextWrapping="Wrap" Text="Bio here" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" d:LayoutOverrides="GridBox" Height="224.862">
+                    </TextBlock>
+                </Grid>
+            </controls:PanoramaItem>
+
+            <!--Panorama item two-->
+            <controls:PanoramaItem Header="Friends" Background="Black" Foreground="White">
+                <Grid Height="495">
+                    <ListBox x:Name="friendListBox" FontSize ="36" Margin="4,88,3,78" Width="413" Tap="friendListBox_Tap"/>   
+                    <TextBlock Height="80" TextWrapping="Wrap" Text="Find new Friend:" VerticalAlignment="Top" FontSize="26.667" HorizontalAlignment="Left" Width="129" d:LayoutOverrides="VerticalAlignment" Margin="10,8,0,0" />
+                    <TextBox Height="86" HorizontalAlignment="Left" Margin="116,-2,0,0" Name="FsearchBox" VerticalAlignment="Top" Width="247" d:LayoutOverrides="VerticalAlignment" RenderTransformOrigin="0.658,1.101" Foreground="Black" Background="#BFFFFFFF" BorderBrush="#BF000000" />
+                    <Button Content="S" Height="86" HorizontalAlignment="Left" Margin="352,-2,0,0" Name="FsearchButton" VerticalAlignment="Top" Width="69" d:LayoutOverrides="VerticalAlignment" Click="FsearchButton_Click" Foreground="White" BorderBrush="White">
+                    </Button>
+                </Grid>
+            </controls:PanoramaItem>
+
+            <!--Panorama item two-->
+            <controls:PanoramaItem Header="Map" Background="Black" Foreground="White">
+                <Grid Height="495">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="420" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock FontSize="26.667" Height="76" HorizontalAlignment="Left" Margin="20,8,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" d:LayoutOverrides="HorizontalAlignment" Text="Search for:"/>
+                    <TextBox Height="84" HorizontalAlignment="Left" Margin="4,44,0,0" Name="EsearchBox" Text="" VerticalAlignment="Top" Width="310" BorderBrush="#BF000000" />
+                    <Button Content="Find" Height="84" HorizontalAlignment="Left" Margin="298,44,0,0" Name="EsearchButton" VerticalAlignment="Top" Width="114" Click="EsearchButton_Click" BorderBrush="White">
+                    </Button>
+                    <TextBlock Height="105" HorizontalAlignment="Left" Margin="18,170,0,0" Name="textBlock1" Text="Please enter the location of the place you&#xd;&#xa;wish to view on the map" VerticalAlignment="Top" Width="404" />
+                </Grid>
+            </controls:PanoramaItem>
+
+            <!--Panorama item two-->
+            <controls:PanoramaItem Header="Settings" Background="Black" Foreground="White">
+                <Grid Height="495">
+                    <TextBlock HorizontalAlignment="Left" Height="40" Margin="7,0,0,442" TextWrapping="Wrap" Text="Change bio:" VerticalAlignment="Bottom" Width="142" FontSize="24" />
+                    <Button Content="Change Bio" HorizontalAlignment="Right" Height="80" Margin="0,0,4,210" VerticalAlignment="Bottom" Width="202" Click="Button_Click" BorderBrush="White"></Button>
+                    <TextBox Height="174" HorizontalAlignment="Left" Margin="3,46,0,0" Name="newBioBox" Background="white" Foreground="Black" BorderBrush="black" VerticalAlignment="Top" Width="411" />
+                    <Button BorderBrush="White" Content="Instructions" Height="80" HorizontalAlignment="Right" Margin="0,0,4,86" VerticalAlignment="Bottom" Width="411" Click="Button_Click_1" />
+                </Grid>
+            </controls:PanoramaItem>
+            
+        </controls:Panorama>
+       
+    </Grid>
+
+</phone:PhoneApplicationPage>

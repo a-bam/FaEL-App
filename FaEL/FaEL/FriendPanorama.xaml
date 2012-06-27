@@ -1,0 +1,49 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="FaEL.PanoramaPage1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="False" xmlns:my="clr-namespace:Microsoft.Phone.Controls.Maps;assembly=Microsoft.Phone.Controls.Maps">
+
+    <!--LayoutRoot contains the root grid where all other page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Black">
+        <controls:Panorama Title="Friend"  Foreground="White" Background="Black">
+            <controls:Panorama.TitleTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding}" FontSize="100" Margin="0,50,0,0" />
+                </DataTemplate>
+            </controls:Panorama.TitleTemplate>
+            
+            <!--Panorama item one-->
+            <controls:PanoramaItem Header="Details" Background="Black" Foreground="White">
+                <Grid>
+                    <TextBlock Name="FriendName" Height="56" Margin="1,2,15,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="32" Text="Name:" d:LayoutOverrides="GridBox, HorizontalMargin" Width="404" />
+                <TextBlock Name="FriendDOB" Height="42" Margin="4,70,202,0" TextWrapping="Wrap" Text="D.O.B.: " VerticalAlignment="Top" FontSize="26.667" d:LayoutOverrides="GridBox, HorizontalMargin" />
+                <TextBlock HorizontalAlignment="Left" Height="38" Margin="5,134,0,0" TextWrapping="Wrap" Text="Bio:" VerticalAlignment="Top" Width="71" FontSize="26.667"/>
+                <TextBlock Name="FriendBio" Margin="3.571,174.571,10.429,178.429" FontSize="24"  TextWrapping="Wrap" Text="Bio here" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" d:LayoutOverrides="GridBox" Height="210.576">
+                </TextBlock>
+                    <Button Content="Find Friend" Height="73" HorizontalAlignment="Left" Margin="1,425,0,0" Name="findButton" VerticalAlignment="Top" Width="418" Click="findButton_Click" Foreground="White" BorderBrush="White"></Button>
+                </Grid>
+    </controls:PanoramaItem>
+
+            <!--Panorama item two-->
+            <controls:PanoramaItem Header="Settings" Background="Black" Foreground="White">
+                <Grid>
+                    <Button Content="Remove Friend" Height="73" HorizontalAlignment="Left" Margin="3,425,0,0" Name="remButton" VerticalAlignment="Top" Width="410" Click="remButton_Click" Foreground="White" BorderBrush="White"></Button>
+                </Grid>
+            </controls:PanoramaItem>
+        </controls:Panorama>
+    </Grid>
+
+    <!--Panorama-based applications should not show an ApplicationBar-->
+
+</phone:PhoneApplicationPage>

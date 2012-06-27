@@ -1,0 +1,50 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="FaEL.PivotPage2"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Black">
+        <!--Pivot Control-->
+        <controls:Pivot Title="FaEL" Foreground="white">
+            <!--Pivot item one-->
+            <controls:PivotItem Header="General" Foreground="white">
+                <Grid>
+                    <TextBlock Height="107" HorizontalAlignment="Left" Margin="4,8,0,0" x:Name="textBlock8" TextWrapping="Wrap" VerticalAlignment="Top" Width="432" ><Run Text="Welcome to the tutorials for the Friend and Event Locator App! Here you will learn the ins and outs of the whole app."/></TextBlock>
+                    <TextBlock Height="107" HorizontalAlignment="Left" Margin="6,129,0,0" Name="textBlock1" TextWrapping="Wrap" VerticalAlignment="Top" Width="432"><Run Text="To change your Bio go to the settings page and enter your new Bio into the text area. After this simply press the button and it will be saved." /></TextBlock>
+                </Grid>
+            </controls:PivotItem>
+
+            <!--Pivot item two-->
+            <controls:PivotItem Header="Locations" Foreground="white">
+                <Grid>
+                    <TextBlock Foreground="White" Height="217" HorizontalAlignment="Left" Margin="6,53,0,0" Name="textBlock6" Text="To set your current location, just click the button at the bottom of the Details page, it is labelled 'Update Your Location'. This will lead you onto the map, which will allow you to get your current location by clicking the relevant button, after this simply press 'Update Location' and your new location will be saved for your friends to view." TextWrapping="Wrap" VerticalAlignment="Top" Width="441" />
+                    <TextBlock FontSize ="30" Foreground="White" Height="51" HorizontalAlignment="Left" Margin="2,4,0,0" Name="textBlock2" Text="Update your location:" TextWrapping="Wrap" VerticalAlignment="Top" Width="441" />
+                    <TextBlock FontSize="30" Foreground="White" Height="51" HorizontalAlignment="Left" Margin="3,279,0,0" Name="textBlock3" Text="Find your friends location:" TextWrapping="Wrap" VerticalAlignment="Top" Width="441" />
+                    <TextBlock Foreground="White" Height="217" HorizontalAlignment="Left" Margin="4,330,0,0" Name="textBlock4" Text="To view your friends last saved location, navigate to the Friends page and select the appropriate friend from the list provided. This will then bring up their profile, next simply slide to the Find page and click the 'Find' button. A map will then appear to show thier location." TextWrapping="Wrap" VerticalAlignment="Top" Width="441" />
+                </Grid>
+            </controls:PivotItem>
+
+            <controls:PivotItem Header="Friends" Foreground="white">
+                <Grid>
+                    <TextBlock Foreground="White" Height="246" HorizontalAlignment="Left" Margin="9,54,0,0" Name="friendBlock6" Text="To add a new friend slide to the Friends page, then type in their name into the text area. After this press the 'S' button to search for them. This will bring a new page with a list of users with this name. To select a user click their name from the list and their profile will appear on the page to the right. If this is the correct user, simply press the 'Send Request' button to send them a friend request.  " TextWrapping="Wrap" VerticalAlignment="Top" Width="441" />
+                    <TextBlock FontSize="30" Foreground="White" Height="51" HorizontalAlignment="Left" Margin="10,10,0,0" Name="textBlock5" Text="Add a new friend:" TextWrapping="Wrap" VerticalAlignment="Top" Width="441" />
+                    <TextBlock FontSize="30" Foreground="White" Height="51" HorizontalAlignment="Left" Margin="4,321,0,0" Name="textBlock7" Text="Remove a friend:" TextWrapping="Wrap" VerticalAlignment="Top" Width="441" />
+                    <TextBlock Foreground="White" Height="222" HorizontalAlignment="Left" Margin="4,371,0,0" Name="textBlock9" Text="To remove a friend navigate to their profile by clicking their name in the Friend list. When inside their profile click the remove friend button to delete them. They will no longer be able to see your location." TextWrapping="Wrap" VerticalAlignment="Top" Width="441" />
+                </Grid>
+            </controls:PivotItem>
+        </controls:Pivot>
+    </Grid>
+    
+</phone:PhoneApplicationPage>
